@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "./_components/ui/sonner";
+import Footer from "./_components/footer";
+
 
 const geistSans = Inter({
   variable: "--font-geist-sans",
@@ -28,6 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Toaster />
+        <Footer/>
+
       </body>
     </html>
   );

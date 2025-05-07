@@ -7,11 +7,6 @@ import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/booking-item"
 import { Input } from "./_components/ui/input"
 import { SearchIcon } from "lucide-react"
-import { Card, CardContent } from "./_components/ui/card"
-
-
-
-
 
 
 
@@ -87,18 +82,10 @@ const Home = async () => {
           ))}
         </div>
     </div>
-    <footer>
-      <Card>
-        <CardContent className="px-5 py-6">
-          <p className="text-sm text-gray-400">
-            © 2023 Copyright <span className="font-bold">barbearia Paulo</span>
-          </p>
-        </CardContent>
-      </Card>
-    </footer>
+          
   </div>
   
-);
+)
     
 };
 
