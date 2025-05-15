@@ -26,6 +26,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
     },
   })
 
+ 
   if (!barbershop) {
     return notFound()
   }
@@ -111,3 +112,4 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
 }
 
 export default BarbershopPage;
+

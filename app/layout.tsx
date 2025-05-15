@@ -3,6 +3,9 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "./_components/ui/sonner";
 import Footer from "./_components/footer";
+import AuthProvider from "./_providers/auth";
+
+
 
 
 const geistSans = Inter({
@@ -30,9 +33,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthProvider>
+
         {children}
         <Toaster />
         <Footer/>
+
+        </AuthProvider>
+       
 
       </body>
     </html>
