@@ -35,11 +35,12 @@ export default function RootLayout({
       >
         <AuthProvider>
 
-        {children}
-        <Toaster />
+        <div className="flex flex-col h-full">
+        <div className="flex-1">{children}</div>
         <Footer/>
-
+        </div>
         </AuthProvider>
+        <Toaster />
        
 
       </body>
