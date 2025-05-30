@@ -58,12 +58,12 @@ const getTimeList = (bookings: Booking[]) => {
     const hour = Number(time.split(":")[0])
     const minutes = Number(time.split(":")[1])
 
-    const hasBopkingOnCurrentTime = bookings.some
+    const hasBookingOnCurrentTime = bookings.some
     (booking =>
        booking.date.getHours() === hour
    && booking.date.getMinutes() === minutes,
   )
-    if (hasBopkingOnCurrentTime) {
+    if (hasBookingOnCurrentTime) {
        
       return false
     }
@@ -93,7 +93,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
   }, [selectedDay, service.id])
 
   const handleBookingClick = () => {
-    if(!data?.user) {
+    if(data?.user) {
      return setBookingSheetIsOpen(true)
     }
     return setSignInDialogIsOpen(true)
@@ -263,7 +263,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                 )}
                 <SheetFooter className="px-5 mt-5">
                   
-                    <Button onClick={handleCreateBooking} disabled={!selectedTime || !selectedDay}>
+                    <Button onClick={handleCreateBooking} disabled={!selectedDay || !selectedTime}>
                       Confirmar</Button>
                   
                 </SheetFooter>
@@ -274,11 +274,14 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
       </CardContent>
     </Card>
 
-    <Dialog open={signInDialogIsOpen} onOpenChange={(open) => setSignInDialogIsOpen(open)}>
-      <DialogContent className="w-[90%]">
-        <SignInDialog />
-      </DialogContent>
-    </Dialog>
+    <Dialog
+        open={signInDialogIsOpen}
+        onOpenChange={(open) => setSignInDialogIsOpen(open)}
+      >
+        <DialogContent className="w-[90%]">
+          <SignInDialog />
+        </DialogContent>
+      </Dialog>
    </>
   )
 }
