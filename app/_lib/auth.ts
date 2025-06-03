@@ -20,7 +20,8 @@ import GoogleProvider from "next-auth/providers/google"
       } as any
       return session
     },
-  }
+  },
+  secret: process.env.NEXT_AUTH_SECRET,
 }
 
 
