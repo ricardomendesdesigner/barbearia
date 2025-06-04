@@ -3,7 +3,8 @@
 
 const BookingSummary = () => {
     return ( 
-        <></>
+        <>
+        </>
     
      );
 }
