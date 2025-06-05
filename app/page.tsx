@@ -53,9 +53,13 @@ const Home = async () => {
         </h2>
 
         <p>
-        <span className="capitalize">{format(new Date(), "EEEE, dd", { locale: ptBR })}</span>
-        <span>&nbsp; de &nbsp;</span> 
-        <span className="capitalize">{format(new Date(), "MMMM", { locale: ptBR })}</span>
+          <span className="capitalize">
+            {format(new Date(), "EEEE, dd", { locale: ptBR })}
+          </span>
+          <span>&nbsp; de &nbsp;</span>
+          <span className="capitalize">
+            {format(new Date(), "MMMM", { locale: ptBR })}
+          </span>
         </p>
 
         {/* Busca */}
@@ -95,16 +99,20 @@ const Home = async () => {
           />
         </div>
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
-          Agendamentos
-        </h2>
+        {confirmedBookings.length > 0 && (
+          <>
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+              Agendamentos
+            </h2>
 
-        {/* Agendamento */}
-        <div className="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {confirmedBookings.map((booking) => (
-            <BookingItem key={booking.id} booking={booking} />
-          ))}
-        </div>
+            {/* Agendamento */}
+            <div className="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+              {confirmedBookings.map((booking) => (
+                <BookingItem key={booking.id} booking={booking} />
+              ))}
+            </div>
+          </>
+        )}
 
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Recomendados
